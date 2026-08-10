@@ -1,0 +1,167 @@
+/* =========================
+   INTRO SCREEN
+========================= */
+
+#introScreen {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff7f9,
+            #ffdce5
+        );
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+
+}
+
+#introScreen.hide {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+}
+
+.intro-content {
+
+    padding: 30px;
+
+}
+
+.intro-heart {
+
+    font-size: 80px;
+
+    animation: heartbeat 1.5s infinite;
+
+    margin-bottom: 20px;
+
+}
+
+.intro-small {
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    color: #a75b6d;
+
+    margin-bottom: 20px;
+
+}
+
+.intro-content h1 {
+
+    font-size: clamp(60px, 12vw, 110px);
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+
+}
+
+.intro-message {
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+
+}
+
+.intro-content button {
+
+    border: none;
+
+    background: #b94f68;
+
+    color: white;
+
+    padding: 17px 38px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    font-family: Georgia, serif;
+
+    transition: 0.3s;
+
+}
+
+.intro-content button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 12px 30px
+        rgba(185,79,104,0.3);
+
+}
+
+
+/* =========================
+   MUSIC CONTROL
+========================= */
+
+#musicControl {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    border: 1px solid #dfb3be;
+
+    background: rgba(255,255,255,0.9);
+
+    color: #a74962;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 5000;
+
+    box-shadow:
+        0 8px 25px
+        rgba(60,30,40,0.15);
+
+    transition: 0.3s;
+
+}
+
+#musicControl:hover {
+
+    transform: scale(1.1);
+
+}

@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Rohan ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fff7f9;
+    color: #3b252c;
+}
+
+/* OPENING SCREEN */
+
+#introScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: linear-gradient(135deg, #fff5f7, #ffdce5);
+
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+#introScreen.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-content {
+    padding: 30px;
+}
+
+.intro-heart {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.intro-small {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    color: #a75b6d;
+    margin-bottom: 20px;
+}
+
+.intro-content h1 {
+    font-size: clamp(60px, 12vw, 110px);
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.intro-message {
+    font-size: 19px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.enter-button {
+    border: none;
+    background: #b94f68;
+    color: white;
+
+    padding: 17px 38px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    font-family: Georgia, serif;
+
+    transition: 0.3s;
+}
+
+.enter-button:hover {
+    transform: scale(1.08);
+}
+
+
+/* MUSIC BUTTON */
+
+#musicControl {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: 1px solid #dfb3be;
+
+    background: rgba(255,255,255,0.95);
+
+    color: #a74962;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 5000;
+
+    box-shadow: 0 8px 25px rgba(60,30,40,0.15);
+}
+
+#audioPrompt {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 10000;
+    color: white;
+    text-align: center;
+}
+
+#audioPrompt.visible {
+    display: flex;
+}
+
+#audioPrompt .prompt-box {
+    max-width: 420px;
+    background: #3b252c;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+#audioPrompt .prompt-box button {
+    margin-top: 20px;
+    border: none;
+    background: #b94f68;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* SECTIONS */
+
+section {
+    min-height: 100vh;
+
+    padding: 90px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+}
+
+.small-title {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 13px;
+    color: #a75b6d;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(60px, 12vw, 120px);
+    font-weight: normal;
+}
+
+h2 {
+    font-size: clamp(40px, 7vw, 70px);
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+p {
+    line-height: 1.9;
+}
+
+
+/* HERO */
+
+#hero {
+    background: linear-gradient(135deg, #fff3f5, #ffdce5);
+}
+
+.hero-text {
+    font-size: 21px;
+    line-height: 1.8;
+    margin-top: 30px;
+}
+
+.scroll {
+    margin-top: 70px;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+
+/* FOUR YEARS */
+
+#years {
+    background: white;
+}
+
+.big-number {
+    font-size: clamp(120px, 20vw, 210px);
+    color: #d17a8c;
+    line-height: 0.8;
+    margin-bottom: 25px;
+}
+
+.normal-text {
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
+}
+
+
+/* TIMELINE */
+
+#timeline {
+    background: #fff0f3;
+}
+
+.timeline {
+    max-width: 650px;
+    margin: 50px auto;
+}
+
+.timeline-item {
+    background: white;
+
+    margin: 20px 0;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(80,30,40,0.08);
+
+    text-align: left;
+}
+
+.timeline-year {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #a75b6d;
+    margin-bottom: 8px;
+}
+
+.timeline-title {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.timeline-description {
+    line-height: 1.7;
+}
+
+
+/* MEMORIES */
+
+#memories {
+    background: white;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+    margin-top: 50px;
+}
+
+.memory {
+    background: #fffaf8;
+
+    padding: 15px;
+
+    box-shadow: 0 15px 40px rgba(80,30,40,0.10);
+
+    transition: 0.3s;
+}
+
+.memory:hover {
+    transform: translateY(-8px);
+}
+
+.memory img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.memory p {
+    padding: 18px 8px;
+}
+
+
+/* TRUTH */
+
+#truth {
+    background: #3b252c;
+    color: white;
+}
+
+.truth-text {
+    max-width: 700px;
+    margin: auto;
+
+    font-size: 21px;
+
+    line-height: 2;
+}
+
+.highlight {
+    color: #f3aabb;
+}
+
+
+/* LETTER */
+
+#letter {
+    background: #fff;
+}
+
+.letter {
+    max-width: 700px;
+
+    margin: auto;
+
+    background: #fffaf8;
+
+    padding: 55px;
+
+    text-align: left;
+
+    box-shadow: 0 20px 70px rgba(60,30,40,0.12);
+
+    border: 1px solid #f0dce1;
+}
+
+.letter h2 {
+    text-align: center;
+}
+
+.letter p {
+    font-size: 18px;
+    margin-bottom: 22px;
+}
+
+.signature {
+    text-align: right;
+
+    margin-top: 40px;
+
+    font-style: italic;
+
+    font-size: 20px;
+}
+
+
+/* QUESTION */
+
+#question {
+    background: linear-gradient(135deg, #ffe9ee, #fff7f8);
+}
+
+.question {
+    font-size: clamp(45px, 8vw, 85px);
+}
+
+.question-sub {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.yes-button,
+.time-button {
+
+    padding: 17px 35px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    margin: 8px;
+
+    font-family: Georgia, serif;
+}
+
+.yes-button {
+    border: none;
+    background: #b94f68;
+    color: white;
+}
+
+.time-button {
+    background: white;
+    color: #6d414c;
+    border: 1px solid #dfb3be;
+}
+
+.response {
+    display: none;
+
+    margin-top: 40px;
+
+    font-size: 22px;
+
+    line-height: 1.7;
+}
+
+
+/* FINAL */
+
+#final {
+    min-height: 70vh;
+    background: white;
+}
+
+.final-heart {
+    font-size: 90px;
+
+    margin-bottom: 25px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.final-text {
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 20px;
+}
+
+
+/* ANIMATION */
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .letter {
+        padding: 30px 22px;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     BACKGROUND MUSIC
+========================= -->
+
+<audio autoplay muted controls>
+  <source src="darkhaast.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+
+<!-- =========================
+     OPENING SCREEN
+========================= -->
+
+<div id="introScreen">
+
+    <div class="intro-content">
+
+        <div class="intro-heart">
+            ♡
+        </div>
+
+        <div class="intro-small">
+            A little something for you
+        </div>
+
+        <h1>
+            Hi, Rohan.
+        </h1>
+
+        <p class="intro-message">
+
+            I made something for you.
+
+            <br><br>
+
+            Put your headphones on.
+
+        </p>
+
+        <button class="enter-button" onclick="enterWebsite()">
+
+            Enter ❤️
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- MUSIC BUTTON -->
+
+<button id="musicControl" onclick="toggleMusic()">
+
+    ♫
+
+</button>
+
+<div id="audioPrompt">
+    <div class="prompt-box">
+        <p>
+            Your browser blocked audio playback.
+            Please click the button below to start the music.
+        </p>
+        <button id="audioRetryButton" type="button">Start music</button>
+    </div>
+</div>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section id="hero">
+
+<div class="container">
+
+    <div class="small-title">
+        For someone who means a lot to me
+    </div>
+
+    <h1>
+        Rohan.
+    </h1>
+
+    <p class="hero-text">
+
+        I don't know how to put four years
+        into words.
+
+        <br><br>
+
+        So I made you a website instead.
+
+    </p>
+
+    <div class="scroll">
+        ↓ keep scrolling ↓
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOUR YEARS
+========================= -->
+
+<section id="years">
+
+<div class="container">
+
+    <div class="small-title">
+        Think about it
+    </div>
+
+    <div class="big-number">
+        4
+    </div>
+
+    <h2>
+        years.
+    </h2>
+
+    <p class="normal-text">
+
+        Four years since we met at school.
+
+        <br><br>
+
+        Four years of knowing you.
+
+        Four years of memories,
+        conversations, arguments,
+        laughter and everything
+        in between.
+
+        <br><br>
+
+        And somehow, you became
+        one of the most important
+        people in my life.
+
+    </p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     TIMELINE
+========================= -->
+
+<section id="timeline">
+
+<div class="container">
+
+    <div class="small-title">
+        Our story
+    </div>
+
+    <h2>
+        How we got here.
+    </h2>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">
+                FOUR YEARS AGO
+            </div>
+
+            <div class="timeline-title">
+                We met.
+            </div>
+
+            <div class="timeline-description">
+
+                Two people at school,
+                probably with absolutely
+                no idea how important
+                the other person would
+                eventually become.
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">
+                SOMEWHERE ALONG THE WAY
+            </div>
+
+            <div class="timeline-title">
+                We became close.
+            </div>
+
+            <div class="timeline-description">
+
+                Conversations turned into
+                memories, and memories
+                turned into something
+                neither of us expected.
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">
+                ALMOST TWO YEARS
+            </div>
+
+            <div class="timeline-title">
+                We chose each other.
+            </div>
+
+            <div class="timeline-description">
+
+                Almost two years of
+                being together.
+
+                Of laughing, fighting,
+                annoying each other,
+                caring about each other
+                and making memories.
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-year">
+                NOW
+            </div>
+
+            <div class="timeline-title">
+                We got separated.
+            </div>
+
+            <div class="timeline-description">
+
+                Not because everything
+                we had suddenly stopped
+                mattering.
+
+                But because life,
+                circumstances and
+                obstacles got in the way.
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TRUTH
+========================= -->
+
+<section id="truth">
+
+<div class="container">
+
+    <div class="small-title" style="color:#f0aabb;">
+        What I realised
+    </div>
+
+    <h2>
+        We didn't stop caring.
+    </h2>
+
+    <p class="truth-text">
+
+        I don't think our story ended
+        because we stopped caring
+        about each other.
+
+        <br><br>
+
+        We just weren't able to give
+        each other the time we needed.
+
+        <br><br>
+
+        Life got busy.
+
+        Things got complicated.
+
+        Obstacles appeared.
+
+        <br><br>
+
+        And eventually, all of that
+        became bigger than us.
+
+        <br><br>
+
+        But that doesn't erase
+        everything we had.
+
+        <br><br>
+
+        <span class="highlight">
+            And it doesn't erase
+            what I still feel.
+        </span>
+
+    </p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     LETTER
+========================= -->
+
+<section id="letter">
+
+<div class="container">
+
+<div class="letter">
+
+    <div class="small-title">
+        What I actually wanted to say
+    </div>
+
+    <h2>
+        Rohan,
+    </h2>
+
+
+    <p>
+
+        I don't know if making a whole
+        website to tell you this is
+        completely normal.
+
+        Probably not.
+
+    </p>
+
+
+    <p>
+
+        But I wanted to do something
+        that could hold everything
+        I couldn't quite say properly.
+
+    </p>
+
+
+    <p>
+
+        I know things didn't work out
+        the way we wanted them to.
+
+        I know we weren't able to give
+        each other enough time.
+
+        And eventually, that became
+        one of the things that hurt us.
+
+    </p>
+
+
+    <p>
+
+        But when I look back at
+        everything, I don't only
+        remember the difficult parts.
+
+    </p>
+
+
+    <p>
+
+        I remember us.
+
+        The person I met at school.
+
+        The person I've known
+        for four years.
+
+        The person I've spent
+        almost two years with.
+
+    </p>
+
+
+    <p>
+
+        I don't want to pretend that
+        everything will suddenly
+        become perfect.
+
+        It won't.
+
+    </p>
+
+
+    <p>
+
+        Life will still get busy.
+
+        There will still be obstacles.
+
+        We'll still have bad days.
+
+    </p>
+
+
+    <p>
+
+        But maybe if we ever get
+        another chance, we can
+        actually make space
+        for each other.
+
+    </p>
+
+
+    <p>
+
+        Not every minute.
+
+        Not some impossible promise.
+
+        Just enough to remind
+        each other that we're
+        still important.
+
+    </p>
+
+
+    <p>
+
+        I'm not asking you to
+        forget what happened.
+
+    </p>
+
+
+    <p>
+
+        I'm asking if you'd be
+        willing to see whether
+        what we had is worth
+        trying for again.
+
+    </p>
+
+
+    <p>
+
+        Because after four years,
+        I still don't think you're
+        someone I want to call
+        a chapter.
+
+    </p>
+
+
+    <div class="signature">
+
+        — Chiku ❤️
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     QUESTION
+========================= -->
+
+<section id="question">
+
+<div class="container">
+
+    <div class="small-title">
+        So here's the scary part
+    </div>
+
+    <h2 class="question">
+        Can we try again?
+    </h2>
+
+    <p class="question-sub">
+
+        No pressure.
+
+        <br>
+
+        No guilt.
+
+        <br>
+
+        Just an honest question.
+
+    </p>
+
+
+    <button class="yes-button" onclick="sayYes()">
+
+        ❤️ Yes, let's try again
+
+    </button>
+
+
+    <button class="time-button" onclick="needTime()">
+
+        I need some time
+
+    </button>
+
+
+    <div class="response" id="response"></div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section id="final">
+
+<div class="container">
+
+    <div class="final-heart">
+        ♡
+    </div>
+
+    <h2>
+        Whatever your answer is...
+    </h2>
+
+    <p class="final-text">
+
+        Thank you for reading this.
+
+        <br><br>
+
+        Thank you for the memories.
+
+        <br><br>
+
+        And thank you for being
+        such an important part
+        of these four years.
+
+        <br><br>
+
+        Some stories don't end
+        where we think they will.
+
+        <br><br>
+
+        Maybe ours doesn't either.
+
+        <br><br>
+
+        <strong>
+            — S
+        </strong>
+
+    </p>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+/* =========================
+   MUSIC
+========================= */
+
+const music = document.getElementById("backgroundMusic");
+const intro = document.getElementById("introScreen");
+const musicButton = document.getElementById("musicControl");
+const enterButton = document.querySelector(".enter-button");
+const audioPrompt = document.getElementById("audioPrompt");
+const audioRetryButton = document.getElementById("audioRetryButton");
+
+function handleEnterKey(event) {
+    if (event.key === "Enter" && !intro.classList.contains("hide")) {
+        event.preventDefault();
+        enterWebsite();
+    }
+}
+
+window.addEventListener("keydown", handleEnterKey);
+
+if (enterButton) {
+    enterButton.addEventListener("click", enterWebsite);
+}
+
+if (audioRetryButton) {
+    audioRetryButton.addEventListener("click", function() {
+        hideAudioPrompt();
+        playMusic();
+    });
+}
+
+function enterWebsite() {
+    if (intro.classList.contains("hide")) {
+        return;
+    }
+
+    intro.classList.add("hide");
+    playMusic();
+}
+
+function playMusic() {
+    music.volume = 0.45;
+    music.currentTime = 0;
+    music.play()
+        .then(function() {
+            musicButton.innerHTML = "Ⅱ";
+            hideAudioPrompt();
+        })
+        .catch(function(error) {
+            console.log("Audio error:", error);
+            showAudioPrompt();
+        });
+}
+
+function showAudioPrompt() {
+    if (audioPrompt) {
+        audioPrompt.classList.add("visible");
+    }
+}
+
+function hideAudioPrompt() {
+    if (audioPrompt) {
+        audioPrompt.classList.remove("visible");
+    }
+}
+
+function toggleMusic() {
+    if (music.paused) {
+        playMusic();
+    } else {
+        music.pause();
+        musicButton.innerHTML = "♫";
+    }
+}
+
+
+/* =========================
+   YES
+========================= */
+
+function sayYes() {
+
+    const response =
+    document.getElementById("response");
+
+    response.innerHTML = `
+
+        ❤️
+
+        <br><br>
+
+        Then maybe...
+
+        <br>
+
+        <strong>
+        let's find our way back to each other.
+        </strong>
+
+        <br><br>
+
+        Four years.
+
+        <br>
+
+        Almost two years.
+
+        <br>
+
+        And maybe this isn't
+        where our story ends.
+
+    `;
+
+    response.style.display = "block";
+
+}
+
+
+/* =========================
+   NEED TIME
+========================= */
+
+function needTime() {
+
+    const response =
+    document.getElementById("response");
+
+    response.innerHTML = `
+
+        🫶
+
+        <br><br>
+
+        That's okay.
+
+        <br>
+
+        Take the time you need.
+
+        <br><br>
+
+        I didn't make this
+        to pressure you.
+
+        <br>
+
+        I just wanted you to know
+        how I feel.
+
+    `;
+
+    response.style.display = "block";
+
+}
+
+</script>
+
+</body>
+</html>
